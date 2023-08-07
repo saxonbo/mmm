@@ -5,6 +5,8 @@
   "description": "",
   "private": true,
   "scripts": {
+    "start": "vue-script start",
+    "build": "vue-script build",
     "commit": "git-cz && git push",
     "release": "standard-version",
     "release:alpha": "standard-version --prerelease alpha",
@@ -12,8 +14,6 @@
     "release:major": "pnpm run release -- --release-as major",
     "release:minor": "pnpm run release -- --release-as minor",
     "release:patch": "pnpm run release -- --release-as patch",
-    "start": "candy-script start",
-    "build": "candy-script build",
 
     "deploy": "gh-pages -d dist"
   },
