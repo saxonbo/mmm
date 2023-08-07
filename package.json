@@ -1,0 +1,51 @@
+{
+  "homepage": "http://saxonbo.github.io/mmm",
+  "name": "mmm",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz && git push",
+    "release": "standard-version",
+    "release:alpha": "standard-version --prerelease alpha",
+    "release:rc": "standard-version --prerelease rc",
+    "release:major": "pnpm run release -- --release-as major",
+    "release:minor": "pnpm run release -- --release-as minor",
+    "release:patch": "pnpm run release -- --release-as patch",
+    "start": "candy-script start",
+    "build": "candy-script build",
+
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@laconic/vue-script": "^1.0.0",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.6.1",
+    "husky": "^8.0.3",
+    "standard-version": "^9.5.0"
+  },
+  "author": "haibo",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not dead"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
